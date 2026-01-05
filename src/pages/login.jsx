@@ -9,28 +9,44 @@ export default function LoginPage() {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 
-	function login(){
-		console.log(email)
-		console.log(password)
-		axios.post("http://localhost:3000/users/login", {
-			email :email,
-			password :password
-		}).then(
-			(response)=>{
+	// function login(){
+		
+	// 	axios.post("http://localhost:3000/users/login",
+	// 		{
+	// 			email : email,
+	// 			password : password
+	// 		}
+	// 	).then(
+	// 		(response)=>{
+	// 			console.log(response)
+	// 		}
+	// 	).catch(
+	// 		(error)=>{
+	// 			console.log(error)
+	// 			console.log("Login Failed")
+	// 		}
+	// 	)
+	// }
+
+	async function login(){
+		try{
+			const response = await axios.post(import.meta.env.VITE_API_URL + "/users/login",
+				{
+					email : email,
+					password : password
+				}
+			)
 				console.log(response)
 				//login successful alert
 				toast.success("Login Successful")
-			}
-		).catch(
-			(error)=>{
+			}catch(error){
 				console.log(error)
 				//Failed login alert
 				toast.error("Login Failed")
 			}
-		)
-	}
-
+		}
 	return (
+		
 // Main container with full width & height and background image
 		<div className="w-full h-full bg-[url('/background1.jpg')] bg-cover no-repeat bg-center flex">
 {/* Left side - Logo section */}
