@@ -15,8 +15,8 @@ export default function LoginPage() {
 			email :email,
 			password :password
 		}).then(
-			()=>{
-				console.log("Login Successful")
+			(response)=>{
+				console.log(response)
 			}
 		).catch(
 			(error)=>{
