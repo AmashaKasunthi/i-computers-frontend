@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import toast from "react-hot-toast";
 
 // Login Page Component
 export default function LoginPage() {
@@ -17,10 +18,14 @@ export default function LoginPage() {
 		}).then(
 			(response)=>{
 				console.log(response)
+				//login successful alert
+				toast.success("Login Successful")
 			}
 		).catch(
 			(error)=>{
 				console.log(error)
+				//Failed login alert
+				toast.error("Login Failed")
 			}
 		)
 	}
