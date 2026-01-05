@@ -1,6 +1,7 @@
 // Import Link component from react-router-dom for navigation
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 // Login Page Component
 export default function LoginPage() {
@@ -10,6 +11,18 @@ export default function LoginPage() {
 	function login(){
 		console.log(email)
 		console.log(password)
+		axios.post("http://localhost:3000/users/login", {
+			email :email,
+			password :password
+		}).then(
+			()=>{
+				console.log("Login Successful")
+			}
+		).catch(
+			(error)=>{
+				console.log(error)
+			}
+		)
 	}
 
 	return (
@@ -55,11 +68,11 @@ export default function LoginPage() {
 						</Link>
 					</p>
                     {/* Login button */}
-					<button className="m-5 p-3 w-[90%] h-12.5 bg-accent rounded-lg text-white font-bold">
+					<button onClick={login} className="m-5 p-3 w-[90%] h-12.5 bg-accent rounded-lg text-white font-bold">
 						Login
 					</button>
                     {/* Google login button */}
-					<button className="m-5 p-3 w-[90%] h-12.5 border border-accent rounded-lg text-white font-bold">
+					<button  className="m-5 p-3 w-[90%] h-12.5 border border-accent rounded-lg text-white font-bold">
 						Login with Google
 					</button>
                     {/* Register link */}
