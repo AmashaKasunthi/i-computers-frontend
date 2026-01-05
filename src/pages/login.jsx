@@ -1,11 +1,20 @@
 // Import Link component from react-router-dom for navigation
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 // Login Page Component
 export default function LoginPage() {
+	const [email, setEmail] = useState("");
+	const [password, setPassword] = useState("");
+
+	function login(){
+		console.log(email)
+		console.log(password)
+	}
+
 	return (
 // Main container with full width & height and background image
-		<div className="w-full h-full bg-[url('/background.jpg')] bg-cover no-repeat bg-center flex">
+		<div className="w-full h-full bg-[url('/background1.jpg')] bg-cover no-repeat bg-center flex">
 {/* Left side - Logo section */}
 			<div className="w-[50%] h-full flex justify-center items-center flex-col">
  {/* App Logo */}
@@ -20,12 +29,22 @@ export default function LoginPage() {
 					<input
 						type="email"
 						placeholder="Email"
+						onChange={
+							(e)=>{
+								setEmail(e.target.value)
+							}
+						}
 						className="m-5 p-3 w-[90%] h-12.5 rounded-lg border border-secondary outline-none"
 					/>
                     	{/* Password input field */}
 					<input
 						type="password"
 						placeholder="Password"
+						onChange={
+							(e)=>{
+								setPassword(e.target.value)
+							}
+						}
 						className="m-5 p-3 w-[90%] h-12.5 rounded-lg border border-secondary outline-none"
 					/>
                     {/* Forgot password link */}
