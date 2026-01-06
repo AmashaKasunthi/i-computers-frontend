@@ -1,6 +1,6 @@
 // Import Link component from react-router-dom for navigation
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link,useNavigate} from "react-router-dom";
 import axios from "axios";
 import toast from "react-hot-toast";
 
@@ -8,6 +8,7 @@ import toast from "react-hot-toast";
 export default function LoginPage() {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
+	const navigate = useNavigate()
 
 	// function login(){
 		
@@ -36,15 +37,23 @@ export default function LoginPage() {
 					password : password
 				}
 			)
-				console.log(response)
-				//login successful alert
-				toast.success("Login Successful")
-			}catch(error){
-				console.log(error)
-				//Failed login alert
-				toast.error("Login Failed")
+			console.log(response)
+			toast.success("Login Successful")
+
+			localStorage.setItem("token" , response.data.token)
+			
+			if(response.data.role == "admin"){
+				
+				navigate("/admin/")
+			}else{
+				//redirect to home page "/"
 			}
+		}catch(error){
+			console.log(error)
+			//alert("Login Failed")
+			toast.error("Login Failed")
 		}
+	}
 	return (
 		
 // Main container with full width & height and background image
