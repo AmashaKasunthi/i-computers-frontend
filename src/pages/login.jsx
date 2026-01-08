@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Link,useNavigate} from "react-router-dom";
 import axios from "axios";
 import toast from "react-hot-toast";
+import { FaGoogle } from "react-icons/fa";
 
 // Login Page Component
 export default function LoginPage() {
@@ -102,7 +103,7 @@ export default function LoginPage() {
 						Login
 					</button>
                     {/* Google login button */}
-					<button  className="m-5 p-3 w-[90%] h-12.5 border border-accent rounded-lg text-white font-bold">
+					<button  className="m-5 p-3 w-[90%] h-12.5 border border-accent rounded-lg text-white font-bold flex items-center justify-center gap-3"> <FaGoogle />
 						Login with Google
 					</button>
                     {/* Register link */}
