@@ -61,15 +61,15 @@ export default function AdminAddProductPage(){
                 <label className="font-bold ml-2">Product ID</label>
                 <input value={productId} onChange={(e)=>{setProductId(e.target.value)}}  placeholder="Ex: ID001" className="border-4 border-accent rounded-[10px] h-12.5-2 m-2 focus:outline-white"/>
             </div>
-            <div className="w-[50%]  h-30 flex flex-col">
+            <div className="w-[50%]  h-30 flex-col">
                 <label className="font-bold ml-2">Product Name</label>
                 <input value={name} onChange={(e)=>{setName(e.target.value)}}  placeholder="Ex: Laptop" className="border-4 border-accent rounded-[10px] h-12.5 p-2 m-2 focus:outline-white"/>
             </div>
             <div className="w-full h-42.5 flex flex-col">
                 <label className="font-bold ml-2">Description</label>
-                <textarea value={description} onChange={(e)=>{setDescription(e.target.value)}}  placeholder="Ex: Laptop" className="border-4 border-accent rounded-[10px] h-25m-2 focus:outline-white"/>
+                <textarea value={description} onChange={(e)=>{setDescription(e.target.value)}}  placeholder="Ex: Laptop" className="border-4 border-accent rounded-[10px] h-25 p-2 m-2 focus:outline-white"/>
             </div>
-            <div className="w-full h-30 flex-col">
+            <div className="w-full h-30 flex flex-col">
                 <label className="font-bold ml-2">Alternative Names (Comma Separated)</label>
                 <input value={altNames} onChange={(e)=>{setAltNames(e.target.value)}}  placeholder="Ex: Laptop, Notebook, Portable Computer" className="border-4 border-accent rounded-[10px] h-12.5 p-2 m-2 focus:outline-white"/>
             </div>
@@ -79,7 +79,7 @@ export default function AdminAddProductPage(){
             </div>
             <div className="w-[50%]  h-30 flex flex-col">
                 <label className="font-bold ml-2">Labelled Price</label>
-                <input value={labelledPrice} onChange={(e)=>{setLabelledPrice(e.target.value)}} type="number" placeholder="Ex: 60000" className="border-4 border-accent rounded-[10px] h-12.5-2 m-2 focus:outline-white"/>
+                <input value={labelledPrice} onChange={(e)=>{setLabelledPrice(e.target.value)}} type="number" placeholder="Ex: 60000" className="border-4 border-accent rounded-[10px] h-12.5 p-2 m-2 focus:outline-white"/>
             </div>
             <div className="w-[25%]  h-30 flex flex-col">
                 <label className="font-bold ml-2">Categories</label>
@@ -92,7 +92,7 @@ export default function AdminAddProductPage(){
                     <option value="Peripherals">Peripherals</option>
                 </select>
             </div>
-            <div className="w-[25%]  h-30 flex-col">
+            <div className="w-[25%]  h-30 flex flex-col">
                 <label className="font-bold ml-2">Brand</label>
                 <select value={brand} onChange={(e)=>{setBrand(e.target.value)}} className="border-4 border-accent rounded-[10px] h-12.5 p-2 m-2 focus:outline-white">
                     <option value="Generic">Generic</option>
@@ -110,7 +110,7 @@ export default function AdminAddProductPage(){
             </div>
             <div className="w-[25%]  h-30 flex flex-col">
                 <label className="font-bold ml-2">Is Visible</label>
-                 <select value={isVisible} onChange={(e)=>{setIsVisible(e.target.value)}} className="border-4 border-accent rounded-[10px] h-12.5-2 m-2 focus:outline-white">
+                 <select value={isVisible} onChange={(e)=>{setIsVisible(e.target.value)}} className="border-4 border-accent rounded-[10px] h-12.5 p-2 m-2 focus:outline-white">
                     <option value={true}>Yes</option>
                     <option value={false}>No</option>
                 </select>
