@@ -21,7 +21,7 @@ export default function AdminAddProductPage(){
         try{
 
             const token = localStorage.getItem("token");
-//optional//
+
             if(token == null){
                 toast.error("You must be logged in to add a product");
                 window.location.href = "/login";
@@ -59,9 +59,9 @@ export default function AdminAddProductPage(){
             <h1 className="w-full text-3xl font-bold mb-4 sticky top-0 bg-primary">Add New Product</h1>
             <div className="w-[50%]   h-30 flex flex-col">
                 <label className="font-bold ml-2">Product ID</label>
-                <input value={productId} onChange={(e)=>{setProductId(e.target.value)}}  placeholder="Ex: ID001" className="border-4 border-accent rounded-[10px] h-12.5-2 m-2 focus:outline-white"/>
+                <input value={productId} onChange={(e)=>{setProductId(e.target.value)}}  placeholder="Ex: ID001" className="border-4 border-accent rounded-[10px] h-12.5 p-2 m-2 focus:outline-white"/>
             </div>
-            <div className="w-[50%]  h-30 flex-col">
+            <div className="w-[50%]  h-30 flex flex-col">
                 <label className="font-bold ml-2">Product Name</label>
                 <input value={name} onChange={(e)=>{setName(e.target.value)}}  placeholder="Ex: Laptop" className="border-4 border-accent rounded-[10px] h-12.5 p-2 m-2 focus:outline-white"/>
             </div>
@@ -115,7 +115,7 @@ export default function AdminAddProductPage(){
                     <option value={false}>No</option>
                 </select>
             </div>
-            <div className="w-full h-20 bg-gray-100 sticky bottom-0 rounded-b-2xl flex justify-end items-center p-4 gap-4 ">
+            <div className="w-full h-20 bg-white sticky bottom-0 rounded-b-2xl flex justify-end items-center p-4 gap-4 ">
                 <button className="bg-gray-400 text-white font-bold px-6 py-3 rounded-[10px] hover:bg-gray-500">Cancel</button>
                 <button onClick={handleAddProduct} className="bg-accent text-white font-bold px-6 py-3 rounded-[10px] hover:bg-secondary">Add Product</button>
             </div>

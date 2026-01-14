@@ -49,10 +49,9 @@ export default function LoginPage() {
 			}else{
 				//redirect to home page "/"
 			}
-		}catch(error){
-			console.log(error)
-			//alert("Login Failed")
-			toast.error("Login Failed")
+		}catch(err){
+			
+			toast.error(err?.response?.data?.message ||" Failed to Login");
 		}
 	}
 	return (
