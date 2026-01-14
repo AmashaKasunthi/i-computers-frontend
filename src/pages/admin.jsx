@@ -3,7 +3,7 @@ import { FaRegListAlt } from "react-icons/fa";
 import { MdOutlineInventory2 } from "react-icons/md";
 import { LuUsersRound } from "react-icons/lu";
 import AdminProductsPage from "./admin/adminProductsPage";
-import AdminAddProductPage from "./admin/AdminAddProductPage";
+import AdminAddProductPage from "./admin/adminAddProductPage";
 
 
 export default function AdminPage(){
