@@ -21,7 +21,7 @@ export default function AdminAddProductPage(){
         try{
 
             const token = localStorage.getItem("token");
-
+//optional//
             if(token == null){
                 toast.error("You must be logged in to add a product");
                 window.location.href = "/login";
