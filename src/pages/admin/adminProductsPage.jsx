@@ -56,6 +56,15 @@ const sampleProducts = [
 export default function AdminProductsPage() {
 	const [products, setProducts] = useState(sampleProducts);
 
+	const token =localStorage.getItem("token");
+	axios.get(import.meta.VIVE_API_URL +"/products",{
+		headers:{
+			Authorization:"Bearer "+token
+		}
+	}).then((response)=>{
+		setProducts(response.data);
+	})
+
 	return (
 		<div className="w-full h-full overflow-y-scroll ">
 			{/* Container */}
